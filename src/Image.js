@@ -15,8 +15,10 @@ export default class Image extends Component {
 						console.log(data.length)
 						let link = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.index(value.url)}.png`;
 						return	(
-							<div className='pokemon'>
-								<img style={{width:'150px'}} src={link} />
+							<div key={this.index(value.url)} className='pokemon'>
+								<div className='image'>
+									<img alt='Pokemon'style={{width:'150px', height:'auto'}} src={link} />
+								</div>
 								<p>{value.name}</p>
 							</div>
 						)
